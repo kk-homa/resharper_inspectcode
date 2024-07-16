@@ -46,7 +46,7 @@ class Installer {
     install(version) {
         return __awaiter(this, void 0, void 0, function* () {
             // The 'update' command will install JetBrains.ReSharper.GlobalTools if it is not already installed.
-            let command = `dotnet tool update --global JetBrains.ReSharper.GlobalTools`;
+            let command = `cd ..; dotnet tool update --global JetBrains.ReSharper.GlobalTools`;
             if (version !== '') {
                 command += ` --version ${version}`;
             }
