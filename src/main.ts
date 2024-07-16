@@ -8,7 +8,7 @@ async function run(): Promise<void> {
   try {
     let pwdCommand = `pwd`
     await exec.exec(pwdCommand)
-
+    core.debug(`directory to be changed`)
     const workingDir: string = core.getInput('workingDirectory')
     if (workingDir) {
       core.debug(`Changing to working directory: ${workingDir}`)
