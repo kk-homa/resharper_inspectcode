@@ -14,7 +14,7 @@ async function run(): Promise<void> {
       core.debug(`Changing to working directory: ${workingDir}`)
       await process.chdir(workingDir)
     }
-
+    core.debug(`directory changed`)
     await exec.exec(pwdCommand)
 
     const installer = new Installer()
