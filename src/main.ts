@@ -6,12 +6,16 @@ import {ReSharperSeverity} from './issue'
 
 async function run(): Promise<void> {
   try {
-    
+    let chdirCommand = `echo pwd`
+    await exec.exec(chdirCommand)
+
     const workingDir: string = core.getInput('workingDirectory')
     if (workingDir) {
       core.debug(`Changing to working directory: ${workingDir}`)
       process.chdir(workingDir)
     }
+
+    await exec.exec(chdirCommand)
 
     const installer = new Installer()
     const version: string = core.getInput('version') ?? ''
